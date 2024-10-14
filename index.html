@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindpal</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <div class="heading">
+        <div class="heading__title">
+          <img src="icon/note.svg" />
+          <h1 class="text-xl-bold">Notes</h1>
+        </div>
+
+        <div class="heading__search">
+          <img class="heading__search__icon" src="icon/search.svg" />
+          <input
+            type="text"
+            class="input text-l heading__search__input text-body-m"
+            id="search"
+            placeholder="Search notes..."
+          />
+        </div>
+      </div>
+
+      <div id="empty-container" class="empty">
+        <img src="icon/circle.svg" class="emptyIcon" />
+        <p class="empty__title text-xl-bold">No notes yet</p>
+        <p class="empty__description text-l">
+          Add a note to keep track of your learnings.
+        </p>
+        <button
+          id="addButton"
+          class="btn-secondary btn-secondary-icon empty__btn"
+        >
+          <img src="icon/note_add.svg" /> <span>Add note</span>
+        </button>
+      </div>
+
+      <button id="addNew" class="btn-primary btn-add">Add new</button>
+      
+      <form id="noteForm" class="note-form">
+          <div class="note-form__header">
+            <p class="text-l-bold" id="noteFormTitle"></p>
+            <button id="cancelButton" type="button" class="btn-third ">Cancel</button>
+          </div>
+          <input
+            type="text"
+            id="noteInputName"
+            name="noteInputName" 
+            class="input text-l"
+            placeholder="Note title"
+            required
+          />
+          <textarea
+            id="noteInputDesc"
+            class="input input-textarea text-l"
+            name="noteInputDesc" 
+            placeholder="Your note"
+            required
+            rows="4"
+          ></textarea>
+          <button id="saveButton" type="submit" class="btn-primary note-form__button">Save</button>
+      </form>
+      <div id="results"></div>
+
+      <ul id="notesList" class="notes-list "></ul>
+
+
+      <div id="deleteModal" class="modal">
+        <div class="modal__content">
+          <p class="text-xl-bold">Delete Note</p>
+          <p class="text-l">Are you sure you want to delete this note?</p>
+          <div class="modal__buttons">
+            <button id="cancelDeleteButton" class="btn-secondary">
+              Cancel
+            </button>
+            <button id="confirmDeleteButton" class="btn-primary">Delete</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
